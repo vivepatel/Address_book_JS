@@ -6,7 +6,7 @@ const addressBook = new AddressBook();
 try {
    
     const contact1 = new Contact(
-    "Vivek", "Patel", "Bhopal", "India", "M.P.", "101009", "9876543210", "vivek@gmail.com"
+    "Vivek", "Patel", "Bhopal", "India", "M.P.", "101001", "9876543210", "vivek-@gmail.com"
     );
     console.log(addressBook.addContact(contact1)); 
 
@@ -16,16 +16,21 @@ const contact2 = new Contact(
 );
 console.log(addressBook.addContact(contact2)); 
     console.log("All Contacts Before editing", addressBook.getAllContacts());
-    console.log(addressBook.editContact("Vivek", { address: "Mumbai", city: "New York", phone: "9238867890" }));
+    console.log(addressBook.editContact("Khushi", { address: "Mumbai", city: "New York", phone: "9238867890" }));
     console.log("All Contacts After editing", addressBook.getAllContacts());
-    console.log(addressBook.deleteContact("Vivek"));
+    console.log(addressBook.deleteContact("Khushi"));
     console.log("All Contacts After Deleting:", addressBook.getAllContacts());
     console.log("Total Contacts:", addressBook.countContacts()); 
 
     const duplicateContact = new Contact(
-        "Vivek", "Patel", "Bhopal", "India", "M.P.", "101009", "9876543210", "vivek@gmail.com"
-    );
-    console.log(addressBook.addContact(duplicateContact)); 
+        "Vivek", "patel", "Bhopal", "India", "M.P.", "101009", "9876543210", "vivek-@gmail.com"
+    );console.log(addressBook.addContact(duplicateContact));  
+
+    console.log("Contacts in India:");
+    console.log(addressBook.searchByCityOrState("India")); 
+
+    console.log("Viewing Persons by City or State:");
+    console.log(addressBook.viewPersonsByCityOrState());
 }  catch (error) {
 console.error("Error:", error.message);
 }
