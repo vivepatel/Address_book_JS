@@ -24,7 +24,7 @@ const contact2 = new Contact(
 
 try {
     const invalidContact = new Contact(
-        "ab", "cde", "abc", "In", "mp", "1001", "12345", "muskan-email"
+        "ab", "cde", "abc", "In", "mp", "1001", "12345", "vivek-email"
     );
     console.log(addressBook.addContact(invalidContact));
 } catch (error) {
